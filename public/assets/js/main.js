@@ -3,6 +3,7 @@ let message = $('#message');
 
 socket.on('message', (data) => {
     $('#messages').append(`<p>${data.message}</p>`);
+    $('html').scrollTop($('html').prop('scrollHeight') + 100)
     $('#typing').hide();
 });
 
@@ -14,7 +15,6 @@ socket.on('typing', (data) => {
 $('#sendMessage').click(function () {
     if (message.val().replace(/ /g, '') === '') return;
     socket.emit('message', {message: message.val()})
-    $('html').scrollTop($('html').prop('scrollHeight') + 100)
     message.val('');
 })
 
