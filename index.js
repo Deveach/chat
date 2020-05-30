@@ -27,6 +27,10 @@ io.on('connection', (socket) => {
         io.sockets.emit('message', data);
     })
 
+    socket.on('typing', (data) => {
+        io.sockets.emit('typing', true);
+    })
+
 });
 
 

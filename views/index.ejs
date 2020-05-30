@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deveach Chat!</title>
     <link rel="stylesheet" href="<%= locals.SITE_URL%>/assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= locals.SITE_URL%>/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= locals.SITE_URL%>/assets/images/favicon-16x16.png">
 </head>
 
 
 
 <body>
 
-    <div id="messages">
-        <p>Hello guys, i am sample message!</p>
-    </div>
+    <div style="padding-bottom: 100px;">
 
-    <hr>
-
-    <div class="textarea-container">
-        <textarea id="message" placeholder="Some content here..."></textarea>
-        <button id="sendMessage">Send</button>
+        <div id="messages">
+            <p>Hello guys, I am a sample message!</p>
+        </div>
+    
+        <hr>
+        <p id="typing" style="display: none;">Typing some users...</p>
+    
+        <div class="textarea-container">
+            <textarea id="message" placeholder="Some content here..."></textarea>
+            <button id="sendMessage">Send</button>
+        </div>
+        
     </div>
 
 

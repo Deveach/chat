@@ -3,12 +3,18 @@ let message = $('#message');
 
 socket.on('message', (data) => {
     $('#messages').append(`<p>${data.message}</p>`);
+    $('#typing').hide();
+});
+
+socket.on('typing', (data) => {
+    $('#typing').show();
 });
 
 
 $('#sendMessage').click(function () {
     if (message.val().replace(/ /g, '') === '') return;
     socket.emit('message', {message: message.val()})
+    $('html').scrollTop($('html').prop('scrollHeight') + 100)
     message.val('');
 })
 
@@ -18,5 +24,14 @@ $(document).on('keypress',function(e) {
     setTimeout(() => {
         message.val('');
     }, 10);
+
+});
+
+message.on('keypress',function(e) {
+    
+    if (message.val().replace(/ /g, '') === '') return;
+    
+    socket.emit('typing', true);
+    
 
 });
