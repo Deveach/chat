@@ -23,12 +23,20 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => { 
 
+    io.sockets.emit('online', Object.keys(io.sockets.json.sockets).length)
+
     socket.on('message', (data) => {
         io.sockets.emit('message', data);
+
+        io.sockets.emit('online', Object.keys(io.sockets.json.sockets).length)
+
     })
 
     socket.on('typing', (data) => {
         io.sockets.emit('typing', true);
+
+        io.sockets.emit('online', Object.keys(io.sockets.json.sockets).length)
+        
     })
 
 });
