@@ -1,0 +1,14 @@
+.textarea-container {
+    position: relative;
+}
+.textarea-container textarea {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.textarea-container button {
+    position: absolute;
+    top: 0;
+    height: 90%;
+
+}

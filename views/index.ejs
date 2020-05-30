@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deveach Chat!</title>
+    <link rel="stylesheet" href="<%= locals.SITE_URL%>/assets/css/style.css">
+</head>
+
+
+
+<body>
+
+    <div id="messages">
+        <p>Hello guys, i am sample message!</p>
+    </div>
+
+    <hr>
+
+    <div class="textarea-container">
+        <textarea id="message" placeholder="Some content here..."></textarea>
+        <button id="sendMessage">Send</button>
+    </div>
+
+
+    <script>
+        const SITE_URL = "<%= locals.SITE_URL%>";
+    </script>
+    <script type="text/javascript" src="<%= locals.SITE_URL%>/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= locals.SITE_URL%>/assets/js/socket.io.js"></script>
+    <script src="<%= locals.SITE_URL%>/assets/js/main.js"></script>
+    
+
+
+</body>
+
+
+
+
+
+</html>
